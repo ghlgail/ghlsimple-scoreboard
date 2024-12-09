@@ -9,6 +9,14 @@ terraform {
   }
 }
 
+  # NOTE: Don't forget to change the bucket and table names!
+  backend "s3" {
+    bucket         = "s3-tfstate-statestoragebucket-qwy1pbk7xolq"
+    key            = "ghlsimple-scoreboard.tfstate"
+    dynamodb_table = "s3-tfstate-StateLockingTable-1RMZJCMM384Y4"
+  }
+}
+
 provider "aws" {
   default_tags {
     tags = jsondecode(var.TAGS_ALL)
