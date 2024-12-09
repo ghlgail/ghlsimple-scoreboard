@@ -7,7 +7,6 @@ terraform {
       version = ">= 5.80"
     }
   }
-}
 
   # NOTE: Don't forget to change the bucket and table names!
   backend "s3" {
